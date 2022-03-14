@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Dmitriy-Gervasov/backend-project-lvl1#readme",
   "bin": {
     "code": "bin/brain-games.js"
-  }
+  },
+  "type" : "module"
 }
-type: module
+
