@@ -7,7 +7,7 @@ const round = 3;
 console.log('Answer "yes" if the number is even,otherwise answer "no".');
 const checkEven = () => {
   for (let i = 1; i <= round; i += 1) {
-    const number = randomnumber(1, 100);
+    const number = randomnumber(1, 1000);
     console.log(`Question: ${number}`);
 
     const Answer = readlineSync.question('Your answer: ');
