@@ -4,7 +4,7 @@ import { userName, randomnumber } from '../scr/index.js';
 
 const round = 3;
 
-console.log('Answer "YES" if the number is even,otherwisr answer "NO".');
+console.log('Answer "YES" if the number is even,otherwise answer "NO".');
 const checkEven = () => {
   for (let i = 1; i <= round; i += 1) {
     const number = randomnumber(1, 100);
