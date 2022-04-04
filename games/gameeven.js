@@ -12,7 +12,7 @@ const checkEven = () => {
 
     const Answer = readlineSync.question('Your answer: ');
     if (number % 2 === 0) {
-      if (Answer === 'YES') {
+      if (Answer === 'YES' || 'yes') {
         console.log('Correct!');
       } else {
         console.log(`'${Answer} is wrong Answer; (. Correct answer was 'YES'`);
@@ -21,7 +21,7 @@ const checkEven = () => {
       }
     }
     if (number % 2 !== 0) {
-      if (Answer === 'NO') {
+      if (Answer === 'NO' || 'no') {
         console.log('Correct!');
       } else {
         console.log(`'${Answer} is wrong Answer; (. Correct answer was 'NO'`);
