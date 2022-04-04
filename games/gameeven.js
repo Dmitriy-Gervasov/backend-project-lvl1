@@ -12,19 +12,19 @@ const checkEven = () => {
 
     const Answer = readlineSync.question('Your answer: ');
     if (number % 2 === 0) {
-      if (Answer === 'YES') {
+      if (Answer === 'yes') {
         console.log('Correct!');
       } else {
-        console.log(`'${Answer} is wrong Answer; (. Correct answer was 'YES'`);
+        console.log(`'${Answer} is wrong Answer; (. Correct answer was 'yes'`);
         console.log(`Let's try again, ${userName}!`);
         return;
       }
     }
     if (number % 2 !== 0) {
-      if (Answer === 'NO') {
+      if (Answer === 'no') {
         console.log('Correct!');
       } else {
-        console.log(`'${Answer} is wrong Answer; (. Correct answer was 'NO'`);
+        console.log(`'${Answer} is wrong Answer; (. Correct answer was 'no'`);
         console.log(`Let's try again, ${userName}!`);
         return;
       }
