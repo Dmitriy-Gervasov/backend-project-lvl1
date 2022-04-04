@@ -2,5 +2,4 @@
 
 import gcd from '../games/braingcd.js';
 
-
 gcd();
