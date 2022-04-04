@@ -7,4 +7,5 @@
 <a href="https://asciinema.org/a/sKAqxIiUNYrxgUjGR37bOBZRI" target="_blank"><img src="https://asciinema.org/a/sKAqxIiUNYrxgUjGR37bOBZRI.svg" /></a>
 
 ### Ascinema 2
-https://asciinema.org/a/SaNdSQyTklQRkzxEZV0VrsTbf
+
+<a href="https://asciinema.org/a/SaNdSQyTklQRkzxEZV0VrsTbf" target="_blank"><img src="https://asciinema.org/a/SaNdSQyTklQRkzxEZV0VrsTbf.svg" /></a>
