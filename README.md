@@ -9,3 +9,5 @@
 ### Ascinema 2
 
 <a href="https://asciinema.org/a/SaNdSQyTklQRkzxEZV0VrsTbf" target="_blank"><img src="https://asciinema.org/a/SaNdSQyTklQRkzxEZV0VrsTbf.svg" /></a>
+### Ascinema 3
+<a href="https://asciinema.org/a/7EAJMj2jSQEd2TWOWe4Z0z3SL" target="_blank"><img src="https://asciinema.org/a/7EAJMj2jSQEd2TWOWe4Z0z3SL.svg" /></a>
