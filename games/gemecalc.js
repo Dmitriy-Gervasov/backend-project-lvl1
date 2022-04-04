@@ -1,44 +1,31 @@
-import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/no-unresolved
-import { userName, randomnumber } from '../scr/index.js';
+import getRandomInt from '../scr/common.js';
+import playGame from '../scr/index.js';
 
-const round = 3;
+const directiveCalc = 'What is the result of the expression?';
+const minRandomNumber = 1;
+const maxRandomNumber = 100;
 
-console.log('What is the result of the expression?');
-const calc = () => {
-  for (let i = 1; i <= round; i += 1) {
-    const operations = ['+', '-', '*'];
-    const getRandomOperator = operations[Math.floor(Math.random() * operations.length)];
+const getRandomOperator = (operators) => operators[getRandomInt(0, operators.length - 1)];
 
-    const num1 = randomnumber(1, 99);
-    const num2 = randomnumber(1, 99);
-
-    let getRandomOperation;
-
-    const showEquation = `${num1} ${getRandomOperator} ${num2}`;
-    console.log(`Question: ${showEquation}`);
-
-    const askAnswer = readlineSync.question('Your answer: ');
-
-    if (getRandomOperator === '+') {
-      getRandomOperation = `${num1 + num2}`;
-    }
-    if (getRandomOperator === '-') {
-      getRandomOperation = `${num1 - num2}`;
-    }
-    if (getRandomOperator === '*') {
-      getRandomOperation = `${num1 * num2}`;
-    }
-
-    if (askAnswer === getRandomOperation) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${askAnswer}' is wrong answer ;(. Correct answer was '${getRandomOperation}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
+const calculate = (num1, num2, symbol) => {
+  switch (symbol) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default: throw new Error('Sorry! This operation is not available.');
   }
-  console.log(`Congratulations, ${userName}!`);
 };
 
-export default calc;
+const genRound = () => {
+  const num1 = getRandomInt(minRandomNumber, maxRandomNumber);
+  const num2 = getRandomInt(minRandomNumber, maxRandomNumber);
+  const randomOperator = getRandomOperator(['+', '-', '*']);
+  const answer = String(calculate(num1, num2, randomOperator));
+  const question = `${num1} ${randomOperator} ${num2}`;
+  return [question, answer];
+};
+
+export default () => playGame(directiveCalc, genRound);

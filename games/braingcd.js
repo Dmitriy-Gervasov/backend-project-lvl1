@@ -1,47 +1,29 @@
-import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/no-unresolved
-import { userName, randomnumber } from '../scr/index.js';
+import getRandomInt from '../scr/common.js';
+import playGame from '../scr/index.js';
 
-const round = 3;
+const directiveGcd = 'Find the greatest common divisor of given numbers.';
+const minRandomNumber = 1;
+const maxRandomNumber = 1000;
 
-console.log('Find the greatest common divisor of given numbers.');
+const getBiggestCommonDivider = (num1, num2) => {
+  const maxOfTwoNumbers = Math.max(num1, num2);
+  const limit = Math.round(maxOfTwoNumbers / 2);
 
-const gcd = () => {
-  for (let i = 1; i <= round; i += 1) {
-    const num1 = randomnumber(1, 100);
-    const num2 = randomnumber(1, 100);
-
-    const showEquation = `${num1} ${num2}`;
-    console.log(`Question: ${showEquation}`);
-
-    const askAnswer = readlineSync.question('Your answer: ');
-    const Divisor = (n1, n2) => {
-      let a = n1;
-      let b = n2;
-      if (a % b === 0) {
-        return b;
-      }
-      while (b !== 0) {
-        if (a > b) {
-          a -= b;
-        } else {
-          b -= a;
-        }
-      }
-      return a;
-    };
-
-    const result = String(Divisor(num1, num2));
-
-    if (askAnswer === result) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${askAnswer}' is wrong answer ;(. Correct answer was '${result}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
+  for (let i = limit; i >= 1; i -= 1) {
+    if ((num1 % i === 0) && (num2 % i === 0)) {
+      return i;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+
+  return 1;
 };
 
-export default gcd;
+const genRound = () => {
+  const num1 = getRandomInt(minRandomNumber, maxRandomNumber);
+  const num2 = getRandomInt(minRandomNumber, maxRandomNumber);
+  const answer = String(getBiggestCommonDivider(num1, num2));
+  const question = `${num1} ${num2}`;
+  return [question, answer];
+};
+
+export default () => playGame(directiveGcd, genRound);

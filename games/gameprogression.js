@@ -1,43 +1,35 @@
-import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/no-unresolved
-import { userName, randomnumber } from '../scr/index.js';
+import getRandomInt from '../scr/common.js';
+import playGame from '../scr/index.js';
 
-const round = 3;
+const directiveProgression = 'What number is missing in the progression?';
+const maxStartInProgression = 100;
+const maxStepInProgression = 10;
+const minLengthOfProgression = 5;
+const maxLengthOfProgression = 10;
 
-console.log('What number is missing in the progression?');
+const generateProgression = () => {
+  const start = getRandomInt(1, maxStartInProgression);
+  const step = getRandomInt(1, maxStepInProgression);
+  const length = getRandomInt(minLengthOfProgression, maxLengthOfProgression);
+  const progression = [];
 
-const progression = () => {
-  for (let i = 1; i <= round; i += 1) {
-    const Number = randomnumber(1, 100);
-    const step = randomnumber(2, 10);
-    const ProgressionLenght = randomnumber(5, 10);
-
-    let result;
-    const massive = [Number];
-    for (let k = 1; k <= ProgressionLenght; k += 1) {
-      result = Number + (k * step);
-      massive.push(result);
-    }
-
-    const IndexofMassive = massive[Math.floor(Math.random() * massive.length)];
-    const numbertoString = IndexofMassive.toString();
-
-    const unknownIndex = massive.indexOf(IndexofMassive);
-    massive[unknownIndex] = '..';
-    const str = massive.join(' ');
-
-    console.log(`Question: ${str}`);
-    const askAnswer = readlineSync.question('Your answer: ');
-
-    if (askAnswer === numbertoString) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${askAnswer}' is wrong answer ;(. Correct answer was '${IndexofMassive}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
   }
-  console.log(`Congratulations, ${userName}!`);
+
+  return progression;
 };
 
-export default progression;
+const genRound = () => {
+  const progression = generateProgression();
+  const randomIndex = getRandomInt(0, progression.length - 1);
+  const randomPartInProgression = progression[randomIndex];
+  const answer = String(randomPartInProgression);
+
+  const progressionQuiz = [...progression];
+  progressionQuiz[randomIndex] = '..';
+  const question = progressionQuiz.join(' ');
+  return [question, answer];
+};
+
+export default () => playGame(directiveProgression, genRound);
