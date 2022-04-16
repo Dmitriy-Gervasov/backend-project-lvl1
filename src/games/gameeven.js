@@ -1,5 +1,5 @@
-import getRandomInt from '../scr/common.js';
-import playGame from '../scr/index.js';
+import getRandomInt from '../src/common.js';
+import playGame from '../src/index.js';
 
 const directiveEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 const minRandomNumber = 0;

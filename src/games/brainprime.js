@@ -1,5 +1,5 @@
-import getRandomInt from '../scr/common.js';
-import playGame from '../scr/index.js';
+import getRandomInt from '../src/common.js';
+import playGame from '../src/index.js';
 
 const directivePrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const minRandomNumber = 1;

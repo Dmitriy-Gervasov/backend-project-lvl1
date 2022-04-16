@@ -1,5 +1,5 @@
-import getRandomInt from '../scr/common.js';
-import playGame from '../scr/index.js';
+import getRandomInt from '../src/common.js';
+import playGame from '../src/index.js';
 
 const directiveGcd = 'Find the greatest common divisor of given numbers.';
 const minRandomNumber = 1;

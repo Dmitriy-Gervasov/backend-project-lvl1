@@ -1,5 +1,5 @@
-import getRandomInt from '../scr/common.js';
-import playGame from '../scr/index.js';
+import getRandomInt from '../common.js';
+import playGame from '../index.js';
 
 const directiveCalc = 'What is the result of the expression?';
 const minRandomNumber = 1;
