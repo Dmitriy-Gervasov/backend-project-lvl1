@@ -1,4 +1,4 @@
-# Hexlet frontend-project-lvl1: console games
+# Hexlet backend-project-lvl1: console games
 ## Hexlet tests and linter status:
 [![Actions Status](https://github.com/Dmitriy-Gervasov/backend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Dmitriy-Gervasov/backend-project-lvl1/actions)
 <a href="https://codeclimate.com/github/Dmitriy-Gervasov/backend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/ad17834e529884aeaeed/maintainability" /></a>
